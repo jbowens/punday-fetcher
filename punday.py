@@ -1,5 +1,6 @@
 #!/bin/python
 import sys, urllib2, re, os
+from subprocess import call
 
 def main(argv):
 
@@ -23,9 +24,8 @@ def main(argv):
         f = open(local_jpg_loc, 'w')
         f.write(jpg)
         f.close()
-        print local_jpg_loc
-    else:
-        print 'no new pun'
+        call(["gsettings", "set", "org.gnome.desktop.background", "picture-uri", "file://" + local_jpg_loc.strip(')')])
+        print "There's a new pun for you! :D"
 
 if __name__ == "__main__":
     main(sys.argv)
