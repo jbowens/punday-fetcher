@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/python
 import sys, urllib2, re, os
 from subprocess import call
 
